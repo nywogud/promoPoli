@@ -1,0 +1,10 @@
+package com.jhl.poli.dao;
+
+import java.util.List;
+
+import com.jhl.poli.vo.PostVO;
+
+public interface MentoDAOImp {
+
+	public List<PostVO> getAllMento() throws Exception;
+}

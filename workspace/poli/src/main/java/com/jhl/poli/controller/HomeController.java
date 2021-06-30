@@ -1,7 +1,7 @@
 package com.jhl.poli.controller;
 
 import java.io.IOException;
-import java.util.Locale;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -12,13 +12,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jhl.poli.service.MentoService;
 import com.jhl.poli.service.TestService;
+import com.jhl.poli.vo.PostVO;
 
 @Controller
 public class HomeController {
 
 	@Inject
-	TestService service;
+	MentoService service;
 
 	@RequestMapping(value = "/favicon.ico", method = RequestMethod.GET)
 
@@ -31,11 +33,11 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) throws Exception {
+	public String home(Model model) throws Exception {
 
-		String test = service.getData();
+		List<PostVO> mento = service.getAllMento();
 
-		model.addAttribute("test", test);
+		model.addAttribute("mento", mento);
 
 		return "home";
 	}

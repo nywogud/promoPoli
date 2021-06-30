@@ -1,0 +1,6 @@
+package com.jhl.poli.dao;
+
+public interface MentoDAO {
+
+	public String getData() throws Exception;
+}
