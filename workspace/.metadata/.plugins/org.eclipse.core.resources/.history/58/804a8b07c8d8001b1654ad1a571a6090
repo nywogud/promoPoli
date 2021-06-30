@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<html>
+<head>
+	<title>main</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<label><a href="/">MAIN</a></label>
+		<label>|</label>
+		<label><a href="#">ADMIN</a></label>
+	</div>
+	<div id="navHovBar">
+		<ul>
+			<li>HOME</li>
+			<li>
+				멘토링
+				<ul>
+					<li>멘토링 안내</li>
+					<li>멘토 특강</li>
+					<li>온라인 취업 멘토링</li>
+					<li>오프라인 멘토링</li>
+					<li>청년희망 멘토링</li>
+				</ul>
+			</li>
+			<li>
+				역량강화
+				<ul>
+					<li>청년 일경험 지원</li>
+					<li>청년주도형 학습매니저</li>
+					<li>청년 학교</li>
+					<li>청년 프로젝트 실험실</li>
+				</ul>
+			</li>
+			<li>
+				취업지원
+				<ul>
+					<li>청년맞춤형지원</li>
+					<li>청년학자금상환 플랫폼</li>
+					<li>청년일자리제안</li>
+					<li>청년공간 이용 안내</li>
+					<li>일자리 한눈에 보기</li>
+				</ul>
+			</li>
+			<li>
+				재단소개
+				<ul>
+					<li>설립취지</li>
+					<li>사업소개</li>
+					<li>가구조직</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
