@@ -16,4 +16,20 @@ public class MentoServiceImp implements MentoService {
 	public List<PostVO> getAllMento() throws Exception{
 		return dao.getAllMento();
 	}
+	
+	@Override
+	public void updateViews(PostVO postVO) throws Exception{
+		dao.updateViews(postVO);
+	}
+	
+	@Override
+	public void doCommit() throws Exception{
+		dao.doCommit();
+	}
+	
+	@Override
+	public List<PostVO> getPostByPostNum(PostVO postVO) throws Exception{
+		return dao.getPostByPostNum(postVO);
+	}
+	
 }

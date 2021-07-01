@@ -19,4 +19,20 @@ public class MentoDAOImp implements MentoDAO {
 	public List<PostVO> getAllMento() throws Exception{
 		return session.selectList(namespace + ".getAllMento");
 	}
+	
+	@Override
+	public void updateViews(PostVO postVO) throws Exception{
+		session.update(namespace +".updateViews", postVO);
+	}
+	
+	@Override
+	public void doCommit() throws Exception{
+		session.update(namespace + ".doCommit");
+	}
+	
+	@Override
+	public List<PostVO> getPostByPostNum(PostVO postVO) throws Exception{
+		return session.selectList(namespace + ".getPostByPostNum" , postVO);
+	}
+	
 }
