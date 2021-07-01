@@ -1,0 +1,54 @@
+ul, ol, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.main {
+	color: white;
+	background: rgb(8, 8, 61);
+	width: 100%;
+}
+
+ul.main>li {
+	display: inline-block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	position: relative;
+	width: 18%;
+}
+
+ul.main>li ul.sub {
+	position: absolute;
+	background: rgb(57, 57, 119);
+	text-align: center;
+	margin-top: 10px;
+	width: 100%;
+}
+
+ul.main>li>a {
+	text-decoration: none;
+	color: white;
+}
+
+ul.main>li>ul>li>a {
+	text-decoration: none;
+	color: white;
+}
+
+ul.main>li ul.sub {
+	display: none;
+}
+
+ul.main:hover ul.sub {
+	display: block;
+}
+
+ul.main>li ul.sub>li {
+	display: inline-block;
+	padding: 10px 10px 0px 0px;
+	text-align: center;
+	position: relative;
+	width: 240px;
+}

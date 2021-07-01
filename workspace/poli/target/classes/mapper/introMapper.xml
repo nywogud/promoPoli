@@ -3,9 +3,7 @@
 
 <mapper namespace="com.jhl.mapper.introMapper">
 	<select id="getAllIntro" resultType="PostVO">
-		select TO_CHAR(regdate,
-		'yyyy-mm-dd hh24:mi:ss'), postnum, title, content, views from
-		intro
+		select * from intro
 	</select>
 
 	<select id="updateViews" parameterType="PostVO">

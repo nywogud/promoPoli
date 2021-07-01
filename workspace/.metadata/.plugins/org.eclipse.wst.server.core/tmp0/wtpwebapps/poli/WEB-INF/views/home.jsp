@@ -5,8 +5,7 @@
 <html>
 <head>
 <title>main</title>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	function mento(postNum) {
 		var postNum = postNum;
@@ -50,7 +49,7 @@
 			}
 		})
 	}
-	
+
 	function support(postNum) {
 		var postNum = postNum;
 		$.ajax({
@@ -71,7 +70,7 @@
 			}
 		})
 	}
-	
+
 	function intro(postNum) {
 		var postNum = postNum;
 		$.ajax({
@@ -80,6 +79,23 @@
 			data : {
 				"postNum" : postNum
 			},
+			success : function(result) {
+
+				$("#content").empty();
+				$("#content").append(result);
+			},
+			error : function(request, status, error) {
+
+				alert("code:" + request.status + "\n" + "message:"
+						+ request.responseText + "\n" + "error:" + error);
+			}
+		})
+	}
+
+	function admin(){
+		$.ajax({
+			type : 'POST',
+			url : '/admin',
 			success : function(result) {
 
 				$("#content").empty();
@@ -153,7 +169,7 @@ ul.main>li ul.sub>li {
 <body>
 	<div style="text-align: center;">
 		<label><a href="/">MAIN</a></label><label>|</label> <label><a
-			href="#">ADMIN</a></label>
+			href="javascript:;" onclick="admin();">ADMIN</a></label>
 	</div>
 	<br>
 	<div id="navHovBar">
@@ -179,7 +195,8 @@ ul.main>li ul.sub>li {
 			<li class="main3">역량강화
 				<ul class="main3Sub sub">
 					<c:forEach var="empower" items="${empower}">
-						<li><a href="javascript:;" onclick="empower('${empower.postNum}');">${empower.title}</a></li>
+						<li><a href="javascript:;"
+							onclick="empower('${empower.postNum}');">${empower.title}</a></li>
 						<!--글 목록이 forEach로 들어옴 -->
 					</c:forEach>
 				</ul>
@@ -187,7 +204,8 @@ ul.main>li ul.sub>li {
 			<li class="main4">취업지원
 				<ul class="main4Sub sub">
 					<c:forEach var="support" items="${support}">
-						<li><a href="javascript:;" onclick="support('${support.postNum}');">${support.title}</a></li>
+						<li><a href="javascript:;"
+							onclick="support('${support.postNum}');">${support.title}</a></li>
 						<!--글 목록이 forEach로 들어옴 -->
 					</c:forEach>
 				</ul>
@@ -195,7 +213,8 @@ ul.main>li ul.sub>li {
 			<li class="main5">재단소개
 				<ul class="main5Sub sub">
 					<c:forEach var="intro" items="${intro}">
-						<li><a href="javascript:;" onclick="intro('${intro.postNum}');">${intro.title}</a></li>
+						<li><a href="javascript:;"
+							onclick="intro('${intro.postNum}');">${intro.title}</a></li>
 						<!--글 목록이 forEach로 들어옴 -->
 					</c:forEach>
 				</ul>

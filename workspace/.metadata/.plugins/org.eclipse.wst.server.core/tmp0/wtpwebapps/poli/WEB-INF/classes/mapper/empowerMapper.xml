@@ -3,9 +3,7 @@
 
 <mapper namespace="com.jhl.mapper.empowerMapper">
 	<select id="getAllEmpower" resultType="PostVO">
-		select TO_CHAR(regdate,
-		'yyyy-mm-dd hh24:mi:ss'), postnum, title, content, views from
-		empower
+		select * from empower
 	</select>
 
 	<select id="updateViews" parameterType="PostVO">

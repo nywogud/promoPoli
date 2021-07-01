@@ -58,4 +58,14 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping(value = "/admin", method = RequestMethod.POST)
+	public String admin(Model model) throws Exception{
+		
+		List<PostVO> mento = mentoService.getAllMento();
+		
+		model.addAttribute("mento", mento);
+		
+		return "admin";
+	}
 }
