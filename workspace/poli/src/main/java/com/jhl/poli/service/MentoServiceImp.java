@@ -32,4 +32,9 @@ public class MentoServiceImp implements MentoService {
 		return dao.getPostByPostNum(postVO);
 	}
 	
+	@Override
+	public void insertPost(PostVO postVO) throws Exception{
+		dao.insertPost(postVO);
+	}
+	
 }

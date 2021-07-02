@@ -35,4 +35,9 @@ public class MentoDAOImp implements MentoDAO {
 		return session.selectList(namespace + ".getPostByPostNum" , postVO);
 	}
 	
+	@Override
+	public void insertPost(PostVO postVO) throws Exception{
+		session.insert(namespace + ".insertPost");
+	}
+	
 }

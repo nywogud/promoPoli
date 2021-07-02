@@ -14,4 +14,6 @@ public interface MentoService {
 
 	public List<PostVO> getPostByPostNum(PostVO postVO) throws Exception;
 
+	public void insertPost(PostVO postVO) throws Exception;
+
 }

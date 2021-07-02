@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jhl.mapper.mentoMapper">
+	<select id="getAllMento" resultType="PostVO">
+		select * from mentoring
+	</select>
+
+	<select id="updateViews" parameterType="PostVO">
+		update mentoring set
+		views = views+1
+		where postnum = #{postNum}
+	</select>
+	
+	<select id="doCommit">
+		commit
+	</select>
+	
+	<select id="getPostByPostNum" parameterType="PostVO" resultType="PostVO">
+		select * from mentoring where postnum=#{postNum}
+	</select>
+	
+	<select id="insertPost" parameterType="PostVO">
+		insert into mentoring (postnum, title, content, regDate, 
+		views) values (MENTORING_SEQ.nextval, #{title}, #{content}, sysdate, 0 )
+	</select>
+
+	<!-- insert 쿼리 ; -->
+</mapper>
